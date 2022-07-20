@@ -1,2 +1,9 @@
 # timeSeries-Histogram
-Produce a histogram from a time series in grace
+## Plot a histogram of a time series and line it up next to the latter in grace
+
+
+Use these files in order in xmgrace command interpreter. You'll need to read through them and adjust as needed. Please don't create case-specific pull requests.
+
+The first file allocates and initializes the parameters where it can. The second creates the histograms. You can run the second file as many times as you have time series for which you want a histogram. It assumes the time series are in packed order, hence `i = i + 1`. The third sets the axis properties. One note on that, you'll probably have the last x tick label of the histogram graph overlap with the first of the Time Series one. I fix this in the GUI by reducing the xmax of the former by 1/1000th. Another thing to try is to increase the separation in the plots in the arrangement step from 0.0 to a higher value. 
+
+There are several issues making these batch files have magic numbers, hard-coded strings, and other smells. It also requires the separation of the flow into multiple files. First, vars need to be ints or floats, so you cannot put axes labels as a parameter. Second, I don't know wheter you can iterate in such a batch file. A script could itterate and compose the batch file. This is fine but the purpose of this project is to take an existing time series in a grace file and add a rotated histogram next to it. To do this in a script, we would have to parse the original time series file. Again, doable and I might in the future but... Third, it is that I don't know how to get information about the plot (e.g. how many graphs there are and how many sets a given graph has. How long is a given set.) For example, it might be useful to have the y axis of the histogram just match that of the time series. But since I cannot get the properties of the latter (like tick separation, ymax and ymin values), we need to set both with desired hard-coded values. ![ToggleSwitchesChi2Histo-TimeSeries](https://user-images.githubusercontent.com/3942442/180088094-911fc13c-5330-4541-87d9-440f8c8232ec.png)
