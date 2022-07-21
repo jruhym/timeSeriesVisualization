@@ -8,6 +8,8 @@ yaxis tick place both
 xaxis label "Frequency"
 xaxis tick minor ticks 4 
 focus g0
+world ymin histmin
+world ymax histmax
 yaxis tick major tickmajor
 yaxis tick minor ticks nminorticks
 yaxis label ""
