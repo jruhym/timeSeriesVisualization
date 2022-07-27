@@ -8,7 +8,6 @@ define nminorticks
 
 # ARRANGE(nrows, ncols, offset, hgap, vgap, hvinv, hinv, vinv) 
 arrange(1,2,0.15,0.0,0.2,OFF,ON,OFF)
-focus g1
 step = 1
 histmin = -180
 histmax = 180
