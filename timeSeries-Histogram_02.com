@@ -1,4 +1,5 @@
 # HISTOGRAM (set, bins, cumulative, normalize)
+focus g1
 histogram(graph[0].set[i],mesh(histmin,histmax,nbins),OFF,ON)
 copy set[i] to set[i+1]
 set[i].x = set[i+1].y
